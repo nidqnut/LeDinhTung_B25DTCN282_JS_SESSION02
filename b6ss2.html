@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>b6</title>
+</head>
+
+<body>
+    <script>
+        let bookName = prompt("Enter book name:");
+        let borrowerName = prompt("Enter borrower name:");
+        let bookStatus = prompt("Enter book status (available / borrowed / unavailable):");
+        let borrowDays = Number(prompt("Enter number of borrow days:"));
+        let hasLibraryCard = prompt("Do you have a library card? (yes/no)");
+        bookStatus = bookStatus.toLowerCase();
+        hasLibraryCard = hasLibraryCard.toLowerCase();
+        if (bookStatus === "available" && hasLibraryCard === "yes") {
+            console.log("Chúc mừng, bạn có thể mượn sách này");
+        }
+        else if (bookStatus === "borrowed" && borrowDays < 30) {
+            if (hasLibraryCard === "yes") {
+                console.log("Sách đang được mượn, vui lòng đợi đến khi trả lại");
+            } else {
+                console.log("Bạn không thể mượn sách nếu không có thẻ thư viện");
+            }
+        }
+        else if (bookStatus === "unavailable") {
+            console.log("Sách này hiện tại không có sẵn trong thư viện, bạn có thể đăng ký mượn sau");
+        }
+        else {
+            console.log("Thông tin không hợp lệ, vui lòng nhập lại");
+        }
+    </script>
+
+</body>
+
+</html>

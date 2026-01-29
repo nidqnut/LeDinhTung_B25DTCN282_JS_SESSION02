@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>b5</title>
+</head>
+
+<body>
+    <script>
+        let bookName = prompt("Enter book name:");
+        let bookStatus = prompt("Enter book status (available/borrowed):");
+        let publishYear = Number(prompt("Enter publish year:"));
+        let currentYear = new Date().getFullYear();
+        let bookAge = currentYear - publishYear;
+        bookStatus = bookStatus.toLowerCase();
+        if (bookStatus === "available" && bookAge <= 5) {
+            console.log("Sách này mới và có sẵn để mượn");
+        } else if (bookStatus === "borrowed" && bookAge <= 10) {
+            console.log("Sách này đã mượn nhưng khá mới, có thể mượn lại sau");
+        } else if (bookStatus === "borrowed" && bookAge > 10) {
+            console.log("Sách này đã mượn và khá cũ");
+        } else if (bookStatus === "available" && bookAge > 5) {
+            console.log("Sách này có sẵn nhưng đã lâu năm");
+        }
+    </script>
+
+</body>
+
+</html>
